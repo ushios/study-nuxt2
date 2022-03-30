@@ -17,6 +17,8 @@
       <card title="Lightweight" icon="arrange-bring-to-front">
         No other internal dependency
       </card>
+
+      {{ user }}
     </div>
   </section>
 </template>
@@ -28,6 +30,11 @@ export default {
   name: 'IndexPage',
   components: {
     Card,
+  },
+  computed: {
+    user() {
+      return this.$store.getters['user/getUserData']
+    },
   },
 }
 </script>

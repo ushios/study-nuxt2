@@ -7,6 +7,8 @@
       Author: <a href="https://github.com/anteriovieira"> Antério Vieira </a>
     </h3>
 
+    {{ user }}
+
     <div>
       <workspace-input-form v-model="formValue" @abcd="onAbcd" />
       <input v-on:click="onClickButton" type="button" value="Send" />
@@ -50,6 +52,11 @@ export default {
         job: 'example: Engineer',
       },
     }
+  },
+  computed: {
+    user() {
+      return this.$store.getters['user/getUserData']
+    },
   },
   methods: {
     // onInputInputForm(v) {

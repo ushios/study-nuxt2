@@ -56,5 +56,8 @@ export default {
       ],
     }
   },
+  async beforeCreate() {
+    await this.$store.dispatch('user/setUserData')
+  },
 }
 </script>
